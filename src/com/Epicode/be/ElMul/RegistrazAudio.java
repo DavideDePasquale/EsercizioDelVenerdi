@@ -11,35 +11,33 @@ public class RegistrazAudio extends PlayerMultimediale implements Volume{
 
     }
 
-    @Override
-    public String info() {
-        return super.info() + "Durata registrazione : " + this.durata + "Volume registrazione : " + this.volume;
+
+    public void play() {
+        System.out.println("Titolo : " + this.titolo + "Durata registrazione : " + this.durata + "Volume registrazione : " + this.volume);
+        String strtitolo = titolo;
+        for (int i = 0; i < volume; i++) {
+            strtitolo += "!";
+            for (int j = 0; j < durata; j++) {
+                System.out.println(strtitolo);
+            }
+        }
     }
 
     @Override
     public void alzaVolume() {
         this.volume ++;
-        play();
+
     }
 
     @Override
     public void abbassaVolume() {
         if(this.volume > 0){
             this.volume --;
+
         } else {
             System.out.println("Il volume non puo essere minore di 0");
         }
 
     }
-    public void play(){
-        String strtitolo = titolo;
-        for (int i = 0; i < volume; i++) {
-            strtitolo += "!";
-        }
-        for (int i = 0; i < durata; i++) {
-            System.out.println(strtitolo);
 
-        }
-
-    }
 }

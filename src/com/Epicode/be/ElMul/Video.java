@@ -1,6 +1,6 @@
 package com.Epicode.be.ElMul;
 
-public class Video extends ImmagineVideo implements Play,Luminosita{
+public class Video extends PlayerMultimediale implements Luminosita,Volume{
     protected int durata;
     protected int volume;
       protected int luminosita;
@@ -14,28 +14,64 @@ public class Video extends ImmagineVideo implements Play,Luminosita{
 
     }
 
-    @Override
-    public String info() {
-        return super.info() + " Durata video : " +  this.durata + " Volume video : " +  this.volume + " Luminosità video : " + this.luminosita;
+    public void play() {
+        for (int i = durata; i > 0; i--) {
+            System.out.println("Titolo : " + this.titolo + " Durata video : " +  this.durata --);
+                infoLuminosita();
+                infoVolume();
+        }
     }
 
-    @Override
-    public void play() {
-          String strTitVideo = titolo;
-        for (int i = 0; i < durata; i++) {
-            strTitVideo += "!";
 
+    @Override
+    public void alzaLuminosita() {
+        if(luminosita > 0){
+            luminosita ++;
+
+        } else {
+            System.out.println("Luminosità al massimo!");
         }
 
     }
 
     @Override
-    public void luminosita() {
+    public void abbassaLuminosita() {
+        if(luminosita < 10){
+            luminosita--;
+        } else {
+            System.out.println("Non puoi abbassare la luminosità! è già troppo bassa!");
+        }
 
     }
 
     @Override
-    public void play(String titolo, int durata) {
+    public void infoLuminosita() {
+        System.out.println("LUMINOSITA' : " + "*".repeat(luminosita));
+    }
 
+    @Override
+    public void alzaVolume() {
+        if(volume > 0){
+            volume ++;
+
+        } else {
+            System.out.println("Volume al massimo!");
+        }
+
+
+    }
+
+    @Override
+    public void abbassaVolume() {
+        if(volume < 10){
+            volume--;
+        } else {
+            System.out.println("Non puoi abbassare il volumeeee! è già troppo basso!");
+        }
+
+
+    }
+    public void infoVolume(){
+        System.out.println(" Volume : " + "!".repeat(volume));
     }
 }
