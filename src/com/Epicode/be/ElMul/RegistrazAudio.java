@@ -10,17 +10,18 @@ public class RegistrazAudio extends PlayerMultimediale implements Volume{
 
 
     }
-
-
     public void play() {
-        System.out.println("Titolo : " + this.titolo + "Durata registrazione : " + this.durata + "Volume registrazione : " + this.volume);
         String strtitolo = titolo;
         for (int i = 0; i < volume; i++) {
             strtitolo += "!";
-            for (int j = 0; j < durata; j++) {
-                System.out.println(strtitolo);
-            }
+
         }
+        for (int j = 0; j < durata; j++) {
+
+            System.out.println("titolo : " + strtitolo +" Durata registrazione : " + this.durata + " Volume registrazione : " + this.volume);
+        }
+
+
     }
 
     @Override
@@ -40,4 +41,13 @@ public class RegistrazAudio extends PlayerMultimediale implements Volume{
 
     }
 
+    @Override
+    public void riproduci() {
+        System.out.println("AUDIO INSERITO CORRETTAMENTE!");
+        play();
+    }
+    @Override
+    public String toString() {
+        return super.toString() + " , Durata: " + durata + " min , Volume : " + volume;
+    }
 }

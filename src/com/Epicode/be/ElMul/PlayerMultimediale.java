@@ -12,5 +12,12 @@ public abstract class PlayerMultimediale {
 
     }
 
+    public String toString(){
+        return " Titolo :" + titolo;
+    }
+
+    public abstract void riproduci();
+
+
 
 }

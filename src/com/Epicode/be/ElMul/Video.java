@@ -15,13 +15,18 @@ public class Video extends PlayerMultimediale implements Luminosita,Volume{
     }
 
     public void play() {
-        for (int i = durata; i > 0; i--) {
-            System.out.println("Titolo : " + this.titolo + " Durata video : " +  this.durata --);
-                infoLuminosita();
-                infoVolume();
-        }
+        System.out.println("VIDEO INSERITO CORRETTAMENTE!");
+        durataVideo();
+        infoLuminosita();
+        infoVolume();
     }
 
+    public void durataVideo(){
+        for (int i = durata; i > 0; i--) {
+            System.out.println(" Titolo : " + this.titolo + " Durata video : " +  this.durata );
+
+        }
+    }
 
     @Override
     public void alzaLuminosita() {
@@ -46,7 +51,7 @@ public class Video extends PlayerMultimediale implements Luminosita,Volume{
 
     @Override
     public void infoLuminosita() {
-        System.out.println("LUMINOSITA' : " + "*".repeat(luminosita));
+        System.out.println(" LUMINOSITA' : " + "*".repeat(luminosita));
     }
 
     @Override
@@ -72,6 +77,16 @@ public class Video extends PlayerMultimediale implements Luminosita,Volume{
 
     }
     public void infoVolume(){
-        System.out.println(" Volume : " + "!".repeat(volume));
+        System.out.println(" VOLUME : " + "!".repeat(volume));
+    }
+
+    @Override
+    public void riproduci() {
+        play();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " , Durata: " + this.durata + " min , Volume : " + this.volume + " , Luminosità : " + this.luminosita;
     }
 }

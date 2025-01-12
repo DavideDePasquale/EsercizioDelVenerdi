@@ -11,8 +11,10 @@ public class Immagine extends PlayerMultimediale implements Luminosita {
     }
 
 
+
     public void show() {
-        System.out.println("Titolo : " + this.titolo);
+        System.out.println(" IMMAGINE INSERITA CORRETTAMENTE!");
+        System.out.println(" Titolo : " + this.titolo);
         infoLuminosita();
     }
 
@@ -41,5 +43,15 @@ public class Immagine extends PlayerMultimediale implements Luminosita {
     public void infoLuminosita() {
             System.out.println("LUMINOSITA' : " + "*".repeat(luminosita));
 
+    }
+
+    @Override
+    public void riproduci() {
+        show();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +" , Luminosità : " + luminosita;
     }
 }
